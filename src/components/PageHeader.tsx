@@ -7,9 +7,11 @@ import React, { useState } from "react";
 
 // Files
 import Button from "./Button";
+import { useSidebarContext } from "@/context/SidebarContext";
 
 const PageHeader = () => {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
+  const { toggle } = useSidebarContext();
   return (
     <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
       <div
@@ -17,7 +19,7 @@ const PageHeader = () => {
           showFullWidthSearch ? "hidden" : "flex"
         }`}
       >
-        <Button variant={"ghost"} size={"icon"}>
+        <Button onClick={toggle} variant={"ghost"} size={"icon"}>
           <Menu />
         </Button>
 
