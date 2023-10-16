@@ -2,14 +2,15 @@
 
 import CategoryPills from "@/components/CategoryPills";
 import PageHeader from "@/components/PageHeader";
-import { categories } from "@/data/home";
+import VideoGridItem from "@/components/VideoGridItem";
+import { categories, videos } from "@/data/home";
 import { useState } from "react";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="max-h-screen flex flex-col">
       <PageHeader />
       <div className="grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto">
         <div>sidebar</div>
@@ -21,6 +22,11 @@ export default function Home() {
               onSelect={setSelectedCategory}
               categories={categories}
             />
+          </div>
+          <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
+            {videos.map((video, index) => (
+              <VideoGridItem key={video.id} {...video} />
+            ))}
           </div>
         </div>
       </div>

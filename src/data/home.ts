@@ -14,18 +14,6 @@ export const categories = [
   "Backend Web Development",
   "Web Development",
   "Coding",
-  "Programming1",
-  "Weight Lifting1",
-  "Bowling1",
-  "Hiking1",
-  "React1",
-  "Next.js1",
-  "Functional Programming1",
-  "Object Oriented Programming1",
-  "Frontend Web Development1",
-  "Backend Web Development1",
-  "Web Development1",
-  "Coding1",
 ];
 
 export const videos = [
